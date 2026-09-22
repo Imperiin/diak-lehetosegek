@@ -3,13 +3,13 @@
     "nev": "PályázatMenedzser – Ifjúsági pályázatok",
     "url": "https://palyazatmenedzser.hu/cimke/ifjusagi-palyazatok/",
     "tipus": "html",
-    "aktiv": true
+    "aktiv": false
   },
   {
     "nev": "PályázatMenedzser – Rajzpályázatok",
     "url": "https://palyazatmenedzser.hu/cimke/rajzpalyazatok/",
     "tipus": "html",
-    "aktiv": true
+    "aktiv": false
   },
   {
     "nev": "pafi.hu – Gyermek, ifjúság",
