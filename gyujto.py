@@ -262,11 +262,11 @@ def tisztit(t: dict, forras_url: str):
     }
 
 
-def osszefesul(tetelek: list, ujak: list, forras: dict) -> int:
+def osszefesul(tetelek: list, ujak: list, forras: dict) -> list:
     ma = dt.date.today().isoformat()
     link_index = {normal_link(t["link"]): t for t in tetelek}
     cim_index = {normal_cim(t["cim"]): t for t in tetelek}
-    hozzaadva = 0
+    hozzaadott = []
     for nyers in ujak:
         t = tisztit(nyers, forras["url"])
         if not t:
@@ -292,8 +292,8 @@ def osszefesul(tetelek: list, ujak: list, forras: dict) -> int:
         tetelek.append(t)
         link_index[normal_link(t["link"])] = t
         cim_index[normal_cim(t["cim"])] = t
-        hozzaadva += 1
-    return hozzaadva
+        hozzaadott.append(t)
+    return hozzaadott
 
 
 def lejart(t: dict, ma: str) -> bool:
@@ -320,6 +320,69 @@ def archival(adatok: dict) -> int:
     return len(regi)
 
 
+# ------------------------------------------------------------- értesítés
+def evf_szoveg(t: dict) -> str:
+    if t["evfolyam_min"] == 1 and t["evfolyam_max"] == 13:
+        return "minden évf."
+    if t["evfolyam_min"] == t["evfolyam_max"]:
+        return f"{t['evfolyam_min']}. évf."
+    return f"{t['evfolyam_min']}–{t['evfolyam_max']}. évf."
+
+
+def ertesit(ujak: list, adatok: dict) -> None:
+    """Reggeli összefoglaló küldése az ntfy alkalmazásba, ha van új vagy hamarosan lejáró tétel."""
+    tema = os.environ.get("NTFY_TEMA", "").strip()
+    if not tema:
+        return
+    ma = dt.date.today()
+    surgos = sorted(
+        (t for t in adatok["tetelek"]
+         if t.get("statusz") != "elutasitva" and t.get("hatarido")
+         and 0 <= (dt.date.fromisoformat(t["hatarido"]) - ma).days <= 3
+         and t not in ujak),
+        key=lambda t: t["hatarido"],
+    )
+    if not ujak and not surgos:
+        print("Értesítés: nincs új vagy sürgős tétel, nem küldök.")
+        return
+
+    sorok = []
+    if ujak:
+        ujak = sorted(ujak, key=lambda t: t.get("hatarido") or t.get("esemeny_datum") or "9999")
+        sorok.append(f"{len(ujak)} új lehetőség:")
+        for t in ujak[:8]:
+            hat = f", határidő: {t['hatarido'][5:].replace('-', '.')}." if t.get("hatarido") else ""
+            sorok.append(f"• {t['cim']} ({evf_szoveg(t)}{hat})")
+        if len(ujak) > 8:
+            sorok.append(f"…és még {len(ujak) - 8}")
+    if surgos:
+        if sorok:
+            sorok.append("")
+        sorok.append("Hamarosan lejár:")
+        for t in surgos[:5]:
+            nap = (dt.date.fromisoformat(t["hatarido"]) - ma).days
+            mikor = "ma" if nap == 0 else "holnap" if nap == 1 else f"{nap} nap múlva"
+            sorok.append(f"• {t['cim']} ({mikor})")
+
+    uzenet = {
+        "topic": tema,
+        "title": f"Diák-lehetőségek: {len(ujak)} új" if ujak else "Diák-lehetőségek: lejáró határidők",
+        "message": "\n".join(sorok)[:3800],
+        "tags": ["school_satchel"],
+    }
+    tarolo = os.environ.get("GITHUB_REPOSITORY", "")
+    oldal = os.environ.get("OLDAL_URL") or (
+        f"https://{tarolo.split('/')[0].lower()}.github.io/{tarolo.split('/')[1]}/" if "/" in tarolo else ""
+    )
+    if oldal:
+        uzenet["click"] = oldal  # az értesítésre koppintva megnyílik a weboldal
+    try:
+        requests.post("https://ntfy.sh/", json=uzenet, timeout=15).raise_for_status()
+        print("Értesítés elküldve.")
+    except Exception as e:  # az értesítés hibája ne állítsa le a gyűjtést
+        print(f"Az értesítést nem sikerült elküldeni: {e}")
+
+
 # ---------------------------------------------------------------------- fő
 def main() -> int:
     ap = argparse.ArgumentParser(description="Diák-lehetőség gyűjtő")
@@ -339,7 +402,7 @@ def main() -> int:
     session = requests.Session()
     session.headers["User-Agent"] = USER_AGENT
 
-    osszes_uj, feldolgozott, hibak, naplo = 0, 0, [], []
+    uj_tetelek, feldolgozott, hibak, naplo = [], 0, [], []
     for forras in forrasok:
         if not forras.get("aktiv", True):
             continue
@@ -357,15 +420,20 @@ def main() -> int:
             else:
                 talalatok = kinyer(kliens, forras, szoveg)
                 uj = osszefesul(adatok["tetelek"], talalatok, forras)
-                osszes_uj += uj
+                uj_tetelek.extend(uj)
                 allapot[forras["url"]] = {"hash": h, "utolso_feldolgozas": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")}
-                naplo.append(f"✓ {nev}: {len(talalatok)} találat, {uj} új")
+                naplo.append(f"✓ {nev}: {len(talalatok)} találat, {len(uj)} új")
             feldolgozott += 1
         except Exception as e:  # egy hibás forrás nem állítja le a többit
             hibak.append(nev)
             naplo.append(f"✗ {nev}: {type(e).__name__}: {e}")
         print(naplo[-1], flush=True)
         time.sleep(KESLELTETES_MP)
+
+    if AUTO_JOVAHAGYAS:
+        for t in adatok["tetelek"]:
+            if t.get("statusz") == "jovahagyasra_var":
+                t["statusz"] = "jovahagyva"
 
     archivalt = archival(adatok)
     adatok["tetelek"].sort(key=lambda t: (t.get("hatarido") or t.get("esemeny_datum") or "9999", t["cim"]))
@@ -375,7 +443,7 @@ def main() -> int:
 
     var = sum(1 for t in adatok["tetelek"] if t.get("statusz") == "jovahagyasra_var")
     osszegzes = (
-        f"Új tétel: {osszes_uj} | archivált: {archivalt} | "
+        f"Új tétel: {len(uj_tetelek)} | archivált: {archivalt} | "
         f"összesen: {len(adatok['tetelek'])} | jóváhagyásra vár: {var} | hibás forrás: {len(hibak)}"
     )
     print(osszegzes)
@@ -385,6 +453,8 @@ def main() -> int:
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
             f.write("## Gyűjtés eredménye\n\n" + osszegzes + "\n\n")
             f.write("\n".join(f"- {sor}" for sor in naplo) + "\n")
+
+    ertesit(uj_tetelek, adatok)
 
     # csak akkor jelez hibát, ha egyetlen forrás sem sikerült
     return 1 if hibak and feldolgozott == 0 else 0
