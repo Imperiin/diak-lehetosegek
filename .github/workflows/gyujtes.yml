@@ -47,5 +47,6 @@ jobs:
             echo "Nincs változás."
           else
             git commit -m "Adatfrissítés $(date -u +%Y-%m-%d)"
+            git pull --rebase origin main
             git push
           fi
