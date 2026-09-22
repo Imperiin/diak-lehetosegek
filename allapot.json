@@ -10,5 +10,29 @@
   "https://tka.hu/palyazatok": {
     "hash": "a99133e374c24008602186c831aa2fd1bde85c7c5b59a9b7ea3ad0000bd0a3d5",
     "utolso_feldolgozas": "2026-09-22T19:54:28+00:00"
+  },
+  "https://eurodesk.hu/lehetosegek": {
+    "hash": "c49368a71a1c0b9dea50a6407cf596bc81dccf04910d5827e4a9e84b6170033d",
+    "utolso_feldolgozas": "2026-09-22T20:27:13+00:00"
+  },
+  "https://eurodesk.hu/hirek": {
+    "hash": "b8c7cd035aa2da74d30a00ba8de1d688761806332b778089032ad72c88e663b7",
+    "utolso_feldolgozas": "2026-09-22T20:27:24+00:00"
+  },
+  "https://palyavalasztas.fpsz.hu/": {
+    "hash": "4d0cf78747cb7dfe562c64db5633bfc50664da2c98692649bd8d0babbfe5b859",
+    "utolso_feldolgozas": "2026-09-22T20:28:46+00:00"
+  },
+  "https://www.gyerekprogramajanlo.hu/muzeum/": {
+    "hash": "f5263c8055f12e6828f5dcbf5c78d4f8b41645a66fab28cb0ca6f429084c6a4b",
+    "utolso_feldolgozas": "2026-09-22T20:29:04+00:00"
+  },
+  "https://www.bpxv.hu/aktualitasok/palyazatok": {
+    "hash": "6655075bc8e21a7361093fb5d8a0ac2301f27b75a4e321b87fe3cac2d474e5c8",
+    "utolso_feldolgozas": "2026-09-22T20:29:14+00:00"
+  },
+  "https://www.bpxv.hu/aktualitasok/esemenyek": {
+    "hash": "56d28b4be9560dc3082bf695c0d0f1d50f4f85d7321037f04a01ac23632b27c1",
+    "utolso_feldolgozas": "2026-09-22T20:29:21+00:00"
   }
 }
