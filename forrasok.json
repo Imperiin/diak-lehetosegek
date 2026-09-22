@@ -1,0 +1,32 @@
+[
+  {
+    "nev": "PályázatMenedzser – Ifjúsági pályázatok",
+    "url": "https://palyazatmenedzser.hu/cimke/ifjusagi-palyazatok/",
+    "tipus": "html",
+    "aktiv": true
+  },
+  {
+    "nev": "PályázatMenedzser – Rajzpályázatok",
+    "url": "https://palyazatmenedzser.hu/cimke/rajzpalyazatok/",
+    "tipus": "html",
+    "aktiv": true
+  },
+  {
+    "nev": "pafi.hu – Gyermek, ifjúság",
+    "url": "https://pafi.hu/palyazatok/gyermek-ifjusag",
+    "tipus": "html",
+    "aktiv": true
+  },
+  {
+    "nev": "palyazatok.org – Rajzpályázat gyerekeknek",
+    "url": "https://palyazatok.org/tag/rajzpalyazat-gyerekeknek/",
+    "tipus": "html",
+    "aktiv": true
+  },
+  {
+    "nev": "Tempus Közalapítvány – Pályázatok",
+    "url": "https://tka.hu/palyazatok",
+    "tipus": "html",
+    "aktiv": true
+  }
+]
