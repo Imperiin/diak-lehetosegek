@@ -36,7 +36,6 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           AUTO_JOVAHAGYAS: ${{ vars.AUTO_JOVAHAGYAS || '0' }}
-          AUTO_JOVAHAGYAS: ${{ vars.AUTO_JOVAHAGYAS || '0' }}
           NTFY_TEMA: ${{ secrets.NTFY_TEMA }}
         run: python gyujto.py ${{ inputs.kenyszerit && '--kenyszerit' || '' }}
 
