@@ -2,7 +2,7 @@ name: Lehetőségek gyűjtése
 
 on:
   schedule:
-    - cron: "0 4 * * *"   # minden nap 04:00 UTC (magyar idő szerint 5 vagy 6 óra)
+    - cron: "0 6 * * 1,4" *"   # minden nap 04:00 UTC (magyar idő szerint 5 vagy 6 óra)
   workflow_dispatch:       # kézi indítás az Actions fülön
     inputs:
       kenyszerit:
