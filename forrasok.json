@@ -1,32 +1,119 @@
 [
   {
-    "nev": "PályázatMenedzser – Ifjúsági pályázatok",
-    "url": "https://palyazatmenedzser.hu/cimke/ifjusagi-palyazatok/",
-    "tipus": "html",
-    "aktiv": false
-  },
-  {
-    "nev": "PályázatMenedzser – Rajzpályázatok",
-    "url": "https://palyazatmenedzser.hu/cimke/rajzpalyazatok/",
-    "tipus": "html",
-    "aktiv": false
-  },
-  {
     "nev": "pafi.hu – Gyermek, ifjúság",
     "url": "https://pafi.hu/palyazatok/gyermek-ifjusag",
     "tipus": "html",
+    "terulet": "országos",
     "aktiv": true
   },
   {
     "nev": "palyazatok.org – Rajzpályázat gyerekeknek",
     "url": "https://palyazatok.org/tag/rajzpalyazat-gyerekeknek/",
     "tipus": "html",
+    "terulet": "országos",
+    "aktiv": true
+  },
+  {
+    "nev": "Eurodesk – Lehetőségek",
+    "url": "https://eurodesk.hu/lehetosegek",
+    "tipus": "html",
+    "terulet": "nemzetközi",
+    "aktiv": true
+  },
+  {
+    "nev": "Eurodesk – Hírek",
+    "url": "https://eurodesk.hu/hirek",
+    "tipus": "html",
+    "terulet": "nemzetközi",
+    "megjegyzes": "Hírportál: csak a konkrét, jelentkezési lehetőséget tartalmazó cikkeket vedd fel, a beszámolókat és általános cikkeket ne.",
+    "aktiv": true
+  },
+  {
+    "nev": "FPSZ Pályaválasztás",
+    "url": "https://palyavalasztas.fpsz.hu/",
+    "tipus": "html",
+    "terulet": "Budapest",
+    "megjegyzes": "A Fővárosi Pedagógiai Szakszolgálat pályaválasztási oldala: továbbtanulási rendezvények, pályaválasztási kiállítások, foglalkozások diákoknak.",
+    "aktiv": true
+  },
+  {
+    "nev": "Szélforgó – Múzeumi programok",
+    "url": "https://www.gyerekprogramajanlo.hu/muzeum/",
+    "tipus": "html",
+    "terulet": "Budapest",
+    "megjegyzes": "Gyerekprogram-ajánló: budapesti és országos múzeumi programok. Budapesten kívüli programnál a helyszínt pontosan add meg.",
+    "aktiv": true
+  },
+  {
+    "nev": "XV. kerület – Önkormányzati pályázatok",
+    "url": "https://www.bpxv.hu/aktualitasok/palyazatok",
+    "tipus": "html",
+    "terulet": "XV. kerület",
+    "megjegyzes": "Önkormányzati oldal: csak a diákoknak, gyerekeknek szóló pályázatokat (pl. tanulmányi, művészeti, sport ösztöndíj) vedd fel; az ingatlan-, lakossági és társasházi pályázatokat hagyd ki.",
+    "aktiv": true
+  },
+  {
+    "nev": "XV. kerület – Önkormányzati események",
+    "url": "https://www.bpxv.hu/aktualitasok/esemenyek",
+    "tipus": "html",
+    "terulet": "XV. kerület",
+    "megjegyzes": "Önkormányzati oldal: a testületi és bizottsági üléseket, lakossági fórumokat hagyd ki; csak gyerekeknek, diákoknak, családoknak szóló eseményeket vegyél fel.",
+    "aktiv": true
+  },
+  {
+    "nev": "Csokonai15 – Események",
+    "url": "https://esemenyek.csokonai15.hu/",
+    "tipus": "html",
+    "terulet": "XV. kerület",
+    "megjegyzes": "A XV. kerületi közösségi házak (Csokonai, Kozák tér, Pestújhely, Újpalota, Kikötő Ifjúsági Központ) programjai.",
+    "aktiv": true
+  },
+  {
+    "nev": "Csokonai15 – Állandó programok",
+    "url": "https://esemenyek.csokonai15.hu/programok/",
+    "tipus": "html",
+    "terulet": "XV. kerület",
+    "megjegyzes": "Rendszeres szakkörök, klubok, mozgásos foglalkozások. A felnőtteknek, időseknek, babáknak szólókat hagyd ki.",
+    "aktiv": true
+  },
+  {
+    "nev": "Csokonai15 – Táborok",
+    "url": "https://taborok.csokonai15.hu/",
+    "tipus": "html",
+    "terulet": "XV. kerület",
+    "megjegyzes": "Nyári és szünidei táborok; a betelt táborokat hagyd ki.",
+    "aktiv": true
+  },
+  {
+    "nev": "TiZEN5 – kerületi hírek",
+    "url": "http://hirek.csokonai15.hu/",
+    "tipus": "html",
+    "terulet": "XV. kerület",
+    "megjegyzes": "Kerületi újság: csak a konkrét, gyerekeknek vagy diákoknak szóló jelentkezési lehetőségeket és programokat vedd fel.",
     "aktiv": true
   },
   {
     "nev": "Tempus Közalapítvány – Pályázatok",
     "url": "https://tka.hu/palyazatok",
     "tipus": "html",
-    "aktiv": true
+    "terulet": "nemzetközi",
+    "megjegyzes": "Kikapcsolva: intézményi pályázatok, diákoknak szóló tételt nem adott.",
+    "aktiv": false
+  },
+  {
+    "nev": "PályázatMenedzser – Ifjúsági pályázatok",
+    "url": "https://palyazatmenedzser.hu/cimke/ifjusagi-palyazatok/",
+    "tipus": "html",
+    "terulet": "országos",
+    "megjegyzes": "Kikapcsolva: az oldal nem engedi az automatikus letöltést (403).",
+    "aktiv": false
+  },
+  {
+    "nev": "PályázatMenedzser – Rajzpályázatok",
+    "url": "https://palyazatmenedzser.hu/cimke/rajzpalyazatok/",
+    "tipus": "html",
+    "terulet": "országos",
+    "megjegyzes": "Kikapcsolva: az oldal nem engedi az automatikus letöltést (403).",
+    "aktiv": false
   }
 ]

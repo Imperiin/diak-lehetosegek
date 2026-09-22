@@ -45,9 +45,9 @@ USER_AGENT = os.environ.get(
 MAX_SZOVEG = 20_000          # ennyi karaktert küldünk forrásonként a Claude-nak
 KESLELTETES_MP = 3           # szünet két letöltés között (udvariasság)
 IDOKORLAT_MP = 30            # letöltési időkorlát
-HATARIDO_NELKULI_NAP = 120   # határidő nélküli tétel ennyi nap után archiválódik
+NEM_LATOTT_NAP = 60         # dátum nélküli tétel (pl. heti szakkör) archiválódik, ha ennyi napja nem szerepel a forrásban
 
-KATEGORIAK = ["kreativ_palyazat", "verseny", "mobilitas", "tovabbtanulas", "esemeny", "egyeb"]
+KATEGORIAK = ["kreativ_palyazat", "verseny", "mobilitas", "tovabbtanulas", "esemeny", "szabadido", "egyeb"]
 
 # --------------------------------------------------------- Claude-utasítások
 ESZKOZ = {
@@ -74,6 +74,7 @@ ESZKOZ = {
                         "helyszin": {"type": "string", "description": "Város, ország, 'online', vagy üres."},
                         "koltseg": {"type": "string", "description": "Pl. 'ingyenes', '5000 Ft', vagy üres."},
                         "szervezo": {"type": "string"},
+                        "idopont": {"type": "string", "description": "Szöveges időpont rendszeres programnál, pl. 'minden hétfő 16–17', vagy üres."},
                         "link": {"type": "string", "description": "A szövegben szereplő URL."},
                     },
                     "required": ["cim", "kategoria", "osszefoglalo", "evfolyam_min", "evfolyam_max", "link"],
@@ -94,13 +95,17 @@ A kapott weboldal-szövegből válogasd ki azokat a tételeket, amelyekre diáko
 - verseny: tanulmányi, tudományos, sport- vagy tehetségverseny
 - mobilitas: külföldi tanulás, csereprogram, nyelvi vagy nemzetközi tábor, ösztöndíj diákoknak
 - tovabbtanulas: nyílt nap, felvételi, középiskolai vagy egyetemi előkészítő, nyári egyetem középiskolásoknak
-- esemeny: előadás, fesztivál, workshop, kiállítás diákoknak
+- esemeny: egyszeri előadás, fesztivál, workshop, kiállítás, múzeumi vagy családi program, amelyen gyerekek is részt vesznek
+- szabadido: rendszeres szakkör, klub, sportfoglalkozás, tánc- vagy zenecsoport, hazai tábor, napközis tábor
 - egyeb: minden más, diákoknak szóló lehetőség
 
-Hagyd ki: az intézményeknek, pedagógusoknak, egyetemistáknak, felnőtteknek, vállalkozásoknak vagy csak óvodásoknak szóló kiírásokat; a már lejárt határidejű tételeket; a menüpontokat, hirdetéseket.
+Hagyd ki: az intézményeknek, pedagógusoknak, egyetemistáknak, vállalkozásoknak, csak felnőtteknek vagy időseknek, illetve csak óvodásoknak szóló kiírásokat; a lakossági hirdetményeket, testületi üléseket, álláshirdetéseket; a már lejárt tételeket; a menüpontokat, hirdetéseket.
+A családi programokat vedd fel, ha iskolás gyerekek is részt vehetnek rajtuk.
+A 18–30 éveseknek szóló (pl. Eurodesk, Erasmus+) lehetőségeket csak akkor vedd fel, ha 18–19 éves középiskolások is jelentkezhetnek; ilyenkor az évfolyam 12–13.
 
 Évfolyam: ha életkor van megadva, számold át (évfolyam ≈ életkor − 6, pl. 10 éves ≈ 4. évfolyam), és szorítsd 1–13 közé. Ha nincs megadva, becsüld a leírásból ("alsós" = 1–4, "felsős" = 5–8, "középiskolás" = 9–13, "általános iskolás" = 1–8).
 
+Rendszeres programnál (pl. heti szakkör) a határidő és az eseménydátum maradjon üres, az időpontot az idopont mezőbe írd.
 Az összefoglalót a saját szavaiddal írd, ne másold át a szöveget.
 A link a lehetőség saját részletes oldalára mutasson, ha ilyen szerepel a szövegben (a <...> közötti URL-ek). Csak ténylegesen szereplő URL-t használj, soha ne találj ki. Ha nincs saját link, a forrásoldal URL-jét add meg.
 Amit nem tudsz biztosan, hagyd üresen. Ha nincs releváns tétel, üres listát adj vissza."""
@@ -203,7 +208,11 @@ def kinyer(kliens: anthropic.Anthropic, forras: dict, szoveg: str) -> list:
         tool_choice={"type": "tool", "name": ESZKOZ["name"]},
         messages=[{
             "role": "user",
-            "content": f"Forrás: {forras['nev']}\nForrásoldal URL: {forras['url']}\n\n---\n{szoveg}",
+            "content": (
+                f"Forrás: {forras['nev']}\nForrásoldal URL: {forras['url']}\n"
+                + (f"Megjegyzés ehhez a forráshoz: {forras['megjegyzes']}\n" if forras.get("megjegyzes") else "")
+                + f"\n---\n{szoveg}"
+            ),
         }],
     )
     for blokk in valasz.content:
@@ -248,6 +257,7 @@ def tisztit(t: dict, forras_url: str):
         "helyszin": s("helyszin"),
         "koltseg": s("koltseg"),
         "szervezo": s("szervezo"),
+        "idopont": s("idopont"),
         "link": link,
     }
 
@@ -274,6 +284,7 @@ def osszefesul(tetelek: list, ujak: list, forras: dict) -> int:
         t.update({
             "id": hashlib.sha1((normal_link(t["link"]) + normal_cim(t["cim"])).encode()).hexdigest()[:12],
             "forras": forras["nev"],
+            "terulet": forras.get("terulet"),
             "elso_latva": ma,
             "utoljara_latva": ma,
             "statusz": "jovahagyva" if AUTO_JOVAHAGYAS else "jovahagyasra_var",
@@ -290,8 +301,8 @@ def lejart(t: dict, ma: str) -> bool:
         return t["hatarido"] < ma
     if t.get("esemeny_datum"):
         return t["esemeny_datum"] < ma
-    elso = dt.date.fromisoformat(t.get("elso_latva", ma))
-    return (dt.date.today() - elso).days > HATARIDO_NELKULI_NAP
+    utoljara = dt.date.fromisoformat(t.get("utoljara_latva") or t.get("elso_latva") or ma)
+    return (dt.date.today() - utoljara).days > NEM_LATOTT_NAP
 
 
 def archival(adatok: dict) -> int:
@@ -339,6 +350,9 @@ def main() -> int:
             szoveg = letolt(session, forras)
             h = ujjlenyomat(szoveg)
             if not args.kenyszerit and allapot.get(forras["url"], {}).get("hash") == h:
+                for t in adatok["tetelek"]:
+                    if t.get("forras") == nev:
+                        t["utoljara_latva"] = dt.date.today().isoformat()
                 naplo.append(f"– {nev}: nem változott")
             else:
                 talalatok = kinyer(kliens, forras, szoveg)
