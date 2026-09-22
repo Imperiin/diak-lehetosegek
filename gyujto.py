@@ -338,7 +338,7 @@ def ertesit(ujak: list, adatok: dict) -> None:
     surgos = sorted(
         (t for t in adatok["tetelek"]
          if t.get("statusz") != "elutasitva" and t.get("hatarido")
-         and 0 <= (dt.date.fromisoformat(t["hatarido"]) - ma).days <= 3
+         and 0 <= (dt.date.fromisoformat(t["hatarido"]) - ma).days <= 5
          and t not in ujak),
         key=lambda t: t["hatarido"],
     )
