@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Jóváhagyás – Lehetőségek diákoknak</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #eef2f6; --felulet: #ffffff; --tinta: #1c2a4a; --halvany: #5a6781; --vonal: #d5dce6;
+  --igen: #2f8a45; --nem: #c4352b; --fokusz: #3b5bdb; --jelolt: #fff6d6;
+  --cim-betu: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --szoveg-betu: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131a29; --felulet: #1b2437; --tinta: #e6eaf2; --halvany: #9aa6bd; --vonal: #2c374f;
+    --igen: #5cc374; --nem: #ff7a6e; --fokusz: #8ea6ff; --jelolt: #3a3420; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #131a29; --felulet: #1b2437; --tinta: #e6eaf2; --halvany: #9aa6bd; --vonal: #2c374f;
+  --igen: #5cc374; --nem: #ff7a6e; --fokusz: #8ea6ff; --jelolt: #3a3420; color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+:root { padding-top: env(safe-area-inset-top, 0px); }
+body { margin: 0; background: var(--bg); color: var(--tinta); font-family: var(--szoveg-betu); font-size: 1rem; line-height: 1.5; padding-bottom: 6rem; }
+:focus-visible { outline: 3px solid var(--fokusz); outline-offset: 2px; border-radius: 4px; }
+.keret { max-width: 860px; margin: 0 auto; padding: 0 1rem; }
+header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; padding: 1.6rem 0 1rem; }
+h1 { font-family: var(--cim-betu); font-weight: 800; font-size: 2rem; margin: 0; letter-spacing: -0.02em; }
+a { color: inherit; }
+.doboz { background: var(--felulet); border-radius: 14px; padding: 1.2rem; margin-bottom: 1rem; }
+.doboz h2 { font-family: var(--cim-betu); margin: 0 0 0.5rem; font-size: 1.3rem; }
+label { display: block; font-weight: 700; margin: 0.8rem 0 0.25rem; font-size: 0.95rem; }
+input, select, textarea {
+  font: inherit; color: var(--tinta); background: var(--bg); border: 1.5px solid var(--vonal);
+  border-radius: 8px; padding: 0.5rem 0.65rem; width: 100%;
+}
+textarea { min-height: 5rem; resize: vertical; }
+.jelolo { display: flex; gap: 0.5rem; align-items: center; font-weight: 400; }
+.jelolo input { width: auto; }
+.gomb {
+  font: inherit; font-weight: 700; border-radius: 10px; padding: 0.55rem 1rem; cursor: pointer;
+  border: 2px solid var(--tinta); background: var(--felulet); color: var(--tinta);
+}
+.gomb.fo { background: var(--tinta); color: var(--felulet); }
+.gomb.igen { border-color: var(--igen); color: var(--igen); }
+.gomb.nem { border-color: var(--nem); color: var(--nem); }
+.gomb:disabled { opacity: .45; cursor: not-allowed; }
+.gombsor { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.9rem; }
+details { margin-top: 0.8rem; color: var(--halvany); }
+details ol { padding-left: 1.2rem; }
+.hiba { color: var(--nem); font-weight: 700; }
+
+.fulek { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.ful { font: inherit; border: 1.5px solid var(--vonal); background: var(--felulet); color: var(--tinta); border-radius: 999px; padding: 0.4rem 0.9rem; cursor: pointer; }
+.ful[aria-selected="true"] { background: var(--tinta); color: var(--felulet); border-color: var(--tinta); }
+.eszkozsor { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1rem; color: var(--halvany); }
+
+.tetel { background: var(--felulet); border-radius: 14px; padding: 1rem 1.1rem; margin-bottom: 0.8rem; border-left: 6px solid var(--vonal); }
+.tetel.d-jovahagyva { border-left-color: var(--igen); background: var(--jelolt); }
+.tetel.d-elutasitva { border-left-color: var(--nem); background: var(--jelolt); }
+.tetel h3 { font-family: var(--cim-betu); font-size: 1.2rem; margin: 0 0 0.3rem; line-height: 1.25; }
+.meta { color: var(--halvany); font-size: 0.92rem; margin: 0 0 0.4rem; }
+.tetel p { margin: 0 0 0.4rem; }
+.dontes { font-weight: 700; font-size: 0.95rem; margin: 0.5rem 0 0; }
+.dontes.igen { color: var(--igen); } .dontes.nem { color: var(--nem); }
+.racs { display: grid; grid-template-columns: 1fr 1fr; gap: 0 0.8rem; }
+@media (max-width: 520px) { .racs { grid-template-columns: 1fr; } }
+
+.mentosav {
+  position: fixed; left: 0; right: 0; bottom: 0; background: var(--felulet); border-top: 1px solid var(--vonal);
+  padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
+}
+.mentosav .keret { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+.ures { text-align: center; color: var(--halvany); padding: 2rem 1rem; }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="keret">
+  <header>
+    <h1>Jóváhagyás</h1>
+    <a href="./">Vissza a nyilvános oldalra</a>
+  </header>
+
+  <!-- belépés -->
+  <section class="doboz" id="belepes" hidden>
+    <h2>Belépés GitHub-tokennel</h2>
+    <p>A jóváhagyások közvetlenül a GitHub-tárolóba mentődnek, ehhez egy hozzáférési token kell.</p>
+    <label for="token">GitHub-token</label>
+    <input id="token" type="password" autocomplete="off" placeholder="github_pat_…">
+    <label class="jelolo"><input id="emlekezz" type="checkbox" checked> Megjegyzés ezen az eszközön</label>
+    <div class="gombsor"><button class="gomb fo" id="belepgomb" type="button">Belépés</button></div>
+    <p class="hiba" id="belephiba" role="alert"></p>
+    <details>
+      <summary>Hogyan készítsek tokent?</summary>
+      <ol>
+        <li>GitHubon kattints jobb felül a profilképedre, majd: Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token.</li>
+        <li>Adj nevet (pl. „jóváhagyás”) és lejáratot.</li>
+        <li>Repository access: Only select repositories → válaszd a <b id="tarolonev">diak-lehetosegek</b> tárolót.</li>
+        <li>Permissions → Repository permissions → Contents: Read and write.</li>
+        <li>Generate token, majd másold ide. A token csak ehhez az egy tárolóhoz ad hozzáférést.</li>
+      </ol>
+    </details>
+  </section>
+
+  <!-- munkafelület -->
+  <section id="munka" hidden>
+    <div class="fulek" role="tablist" id="fulek"></div>
+    <div class="eszkozsor">
+      <span id="info"></span>
+      <span>
+        <button class="gomb" id="mindetgomb" type="button" hidden>Az összes itt látható jóváhagyása</button>
+        <button class="gomb" id="kilepgomb" type="button">Kilépés</button>
+      </span>
+    </div>
+    <div id="lista"></div>
+  </section>
+</div>
+
+<div class="mentosav" id="mentosav" hidden>
+  <div class="keret">
+    <span id="valtozasdb" aria-live="polite">Nincs mentetlen változás</span>
+    <button class="gomb fo" id="mentesgomb" type="button" disabled>Mentés a GitHubra</button>
+  </div>
+</div>
+
+<script>
+// ---- tároló felismerése (felhasznalo.github.io/tarolo), különben alapértékek
+const ALAP_TULAJ = "Imperiin", ALAP_TAROLO = "diak-lehetosegek";
+const TULAJ = location.hostname.endsWith(".github.io") ? location.hostname.split(".")[0] : ALAP_TULAJ;
+const TAROLO = (location.hostname.endsWith(".github.io") && location.pathname.split("/")[1]) || ALAP_TAROLO;
+const API = `https://api.github.com/repos/${TULAJ}/${TAROLO}/contents/adatok.json`;
+const KATEGORIAK = {
+  kreativ_palyazat: "Kreatív pályázat", verseny: "Verseny", mobilitas: "Külföld, csereprogram",
+  tovabbtanulas: "Továbbtanulás", esemeny: "Esemény", szabadido: "Szabadidő", egyeb: "Egyéb",
+};
+const FULEK = [["jovahagyasra_var", "Jóváhagyásra vár"], ["jovahagyva", "Jóváhagyott"], ["elutasitva", "Elutasított"]];
+const $ = (id) => document.getElementById(id);
+
+let token = "";
+let adat = null;
+let aktivFul = "jovahagyasra_var";
+const valtozasok = new Map(); // id -> { statusz?, mezok? }
+let szerkesztett = null;
+
+$("tarolonev").textContent = TAROLO;
+
+// ---- kódolás (UTF-8 <-> base64)
+function b64be(szoveg) {
+  const bajtok = new TextEncoder().encode(szoveg);
+  let bin = "";
+  for (let i = 0; i < bajtok.length; i += 0x8000) bin += String.fromCharCode(...bajtok.subarray(i, i + 0x8000));
+  return btoa(bin);
+}
+function b64bol(b64) {
+  const bin = atob(b64.replace(/\n/g, ""));
+  return new TextDecoder().decode(Uint8Array.from(bin, (c) => c.charCodeAt(0)));
+}
+
+// ---- GitHub API
+async function gh(modszer, torzs) {
+  const v = await fetch(API + (modszer === "GET" ? "?ref=main&t=" + Date.now() : ""), {
+    method: modszer,
+    headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28" },
+    body: torzs ? JSON.stringify(torzs) : undefined,
+    cache: "no-store",
+  });
+  if (!v.ok) {
+    const e = new Error(`GitHub-hiba (${v.status})`);
+    e.status = v.status;
+    throw e;
+  }
+  return v.json();
+}
+async function letolt() {
+  const v = await gh("GET");
+  if (!v.content) throw new Error("Az adatok.json túl nagy a közvetlen szerkesztéshez.");
+  return { sha: v.sha, adat: JSON.parse(b64bol(v.content)) };
+}
+
+// ---- belépés
+async function belep(t, emlekezz) {
+  token = t.trim();
+  $("belephiba").textContent = "";
+  try {
+    const { adat: a } = await letolt();
+    adat = a;
+    if (emlekezz) { try { localStorage.setItem("gh-token", token); } catch (_) {} }
+    $("belepes").hidden = true; $("munka").hidden = false; $("mentosav").hidden = false;
+    rajzol();
+  } catch (e) {
+    token = "";
+    $("belepes").hidden = false;
+    $("belephiba").textContent =
+      e.status === 401 ? "A token érvénytelen vagy lejárt." :
+      e.status === 404 ? `A token nem fér hozzá a(z) ${TAROLO} tárolóhoz, vagy még nincs benne adatok.json.` :
+      e.status === 403 ? "A tokennek nincs olvasási joga a tárolóhoz." :
+      "Nem sikerült csatlakozni: " + e.message;
+  }
+}
+$("belepgomb").onclick = () => belep($("token").value, $("emlekezz").checked);
+$("token").onkeydown = (e) => { if (e.key === "Enter") $("belepgomb").click(); };
+$("kilepgomb").onclick = () => {
+  if (valtozasok.size && !confirm("Mentetlen változásaid vannak. Biztosan kilépsz?")) return;
+  try { localStorage.removeItem("gh-token"); } catch (_) {}
+  location.reload();
+};
+
+// ---- döntések
+function dont(id, statusz) {
+  const v = valtozasok.get(id) || {};
+  v.statusz = statusz;
+  valtozasok.set(id, v);
+  rajzol();
+}
+function visszavon(id) { valtozasok.delete(id); rajzol(); }
+
+$("mindetgomb").onclick = () => {
+  const lathato = adat.tetelek.filter((t) => t.statusz === aktivFul && !valtozasok.get(t.id)?.statusz);
+  if (!lathato.length || !confirm(`${lathato.length} tétel jóváhagyása. Biztos? (Mentés előtt még visszavonható.)`)) return;
+  for (const t of lathato) dont(t.id, "jovahagyva");
+};
+
+// ---- megjelenítés
+function elem(tag, osztaly, szoveg) {
+  const e = document.createElement(tag);
+  if (osztaly) e.className = osztaly;
+  if (szoveg != null) e.textContent = szoveg;
+  return e;
+}
+function gomb(szoveg, osztaly, kattintas) {
+  const b = elem("button", "gomb " + (osztaly || ""), szoveg);
+  b.type = "button"; b.onclick = kattintas;
+  return b;
+}
+function ervenyes(t) {
+  const m = valtozasok.get(t.id)?.mezok;
+  return m ? { ...t, ...m } : t;
+}
+
+function kartya(eredeti) {
+  const t = ervenyes(eredeti);
+  const v = valtozasok.get(t.id);
+  const d = elem("article", "tetel" + (v?.statusz ? " d-" + v.statusz : ""));
+  if (szerkesztett === t.id) { d.append(szerkeszto(t)); return d; }
+
+  d.append(elem("h3", null, t.cim));
+  const evf = t.evfolyam_min === t.evfolyam_max ? `${t.evfolyam_min}.` : `${t.evfolyam_min}–${t.evfolyam_max}.`;
+  const meta = [KATEGORIAK[t.kategoria] || t.kategoria, `${evf} évfolyam`, t.terulet].filter(Boolean).join(", ");
+  d.append(elem("p", "meta", meta));
+  if (t.osszefoglalo) d.append(elem("p", null, t.osszefoglalo));
+  const reszlet = [
+    t.hatarido && `Határidő: ${t.hatarido}`, t.esemeny_datum && `Dátum: ${t.esemeny_datum}`,
+    t.idopont && `Időpont: ${t.idopont}`, t.helyszin && `Helyszín: ${t.helyszin}`,
+    t.koltseg && `Költség: ${t.koltseg}`, `Forrás: ${t.forras || "ismeretlen"}`,
+  ].filter(Boolean).join("; ");
+  d.append(elem("p", "meta", reszlet));
+  if (/^https?:\/\//.test(t.link)) {
+    const a = elem("a", null, "Eredeti kiírás megnyitása");
+    a.href = t.link; a.target = "_blank"; a.rel = "noopener";
+    const p = elem("p"); p.append(a); d.append(p);
+  }
+
+  if (v?.statusz) {
+    const szoveg = v.statusz === "jovahagyva" ? "Jóváhagyva, mentésre vár" : v.statusz === "elutasitva" ? "Elutasítva, mentésre vár" : "Visszaállítva, mentésre vár";
+    d.append(elem("p", "dontes " + (v.statusz === "elutasitva" ? "nem" : "igen"), szoveg));
+  } else if (v?.mezok) {
+    d.append(elem("p", "dontes igen", "Módosítva, mentésre vár"));
+  }
+
+  const sor = elem("div", "gombsor");
+  if (v) sor.append(gomb("Visszavonás", "", () => visszavon(t.id)));
+  if (!v?.statusz) {
+    if (t.statusz !== "jovahagyva") sor.append(gomb("Jóváhagyom", "igen", () => dont(t.id, "jovahagyva")));
+    if (t.statusz !== "elutasitva") sor.append(gomb("Elutasítom", "nem", () => dont(t.id, "elutasitva")));
+    if (t.statusz !== "jovahagyasra_var") sor.append(gomb("Vissza a várólistára", "", () => dont(t.id, "jovahagyasra_var")));
+  }
+  sor.append(gomb("Szerkesztés", "", () => { szerkesztett = t.id; rajzol(); }));
+  d.append(sor);
+  return d;
+}
+
+function mezo(cimke, nev, ertek, tipus = "text") {
+  const w = elem("div");
+  const id = "m-" + nev;
+  const l = elem("label", null, cimke); l.htmlFor = id;
+  let i;
+  if (tipus === "textarea") { i = elem("textarea"); i.value = ertek || ""; }
+  else if (tipus === "kategoria") {
+    i = elem("select");
+    for (const [k, n] of Object.entries(KATEGORIAK)) i.append(new Option(n, k, false, k === ertek));
+  } else { i = elem("input"); i.type = tipus; i.value = ertek ?? ""; if (tipus === "number") { i.min = 1; i.max = 13; } }
+  i.id = id; i.name = nev;
+  w.append(l, i);
+  return w;
+}
+function szerkeszto(t) {
+  const f = elem("form");
+  f.append(elem("h3", null, "Szerkesztés"));
+  f.append(mezo("Cím", "cim", t.cim));
+  f.append(mezo("Összefoglaló", "osszefoglalo", t.osszefoglalo, "textarea"));
+  const r1 = elem("div", "racs");
+  r1.append(mezo("Kategória", "kategoria", t.kategoria, "kategoria"), mezo("Terület", "terulet", t.terulet));
+  r1.append(mezo("Évfolyamtól", "evfolyam_min", t.evfolyam_min, "number"), mezo("Évfolyamig", "evfolyam_max", t.evfolyam_max, "number"));
+  r1.append(mezo("Határidő", "hatarido", t.hatarido, "date"), mezo("Esemény dátuma", "esemeny_datum", t.esemeny_datum, "date"));
+  r1.append(mezo("Időpont (rendszeres programnál)", "idopont", t.idopont), mezo("Helyszín", "helyszin", t.helyszin));
+  r1.append(mezo("Költség", "koltseg", t.koltseg), mezo("Szervező", "szervezo", t.szervezo));
+  f.append(r1);
+  f.append(mezo("Link", "link", t.link, "url"));
+  const sor = elem("div", "gombsor");
+  const ment = gomb("Módosítások megtartása", "fo", null);
+  ment.type = "submit";
+  sor.append(ment, gomb("Mégse", "", () => { szerkesztett = null; rajzol(); }));
+  f.append(sor);
+  f.onsubmit = (e) => {
+    e.preventDefault();
+    const fd = new FormData(f);
+    const m = {};
+    for (const [k, v] of fd.entries()) {
+      let ertek = String(v).trim();
+      if (k.startsWith("evfolyam_")) ertek = Math.min(13, Math.max(1, parseInt(ertek, 10) || 1));
+      else if (ertek === "") ertek = null;
+      m[k] = ertek;
+    }
+    if (m.evfolyam_min > m.evfolyam_max) [m.evfolyam_min, m.evfolyam_max] = [m.evfolyam_max, m.evfolyam_min];
+    if (!m.cim) { alert("A cím nem lehet üres."); return; }
+    const v = valtozasok.get(t.id) || {};
+    v.mezok = m;
+    valtozasok.set(t.id, v);
+    szerkesztett = null;
+    rajzol();
+  };
+  return f;
+}
+
+function rajzol() {
+  const fulek = $("fulek");
+  fulek.innerHTML = "";
+  for (const [k, n] of FULEK) {
+    const db = adat.tetelek.filter((t) => t.statusz === k).length;
+    const b = elem("button", "ful", `${n} (${db})`);
+    b.type = "button"; b.setAttribute("role", "tab"); b.setAttribute("aria-selected", String(k === aktivFul));
+    b.onclick = () => { aktivFul = k; szerkesztett = null; rajzol(); };
+    fulek.append(b);
+  }
+  const lista = adat.tetelek.filter((t) => t.statusz === aktivFul);
+  $("info").textContent = lista.length ? `${lista.length} tétel` : "";
+  $("mindetgomb").hidden = aktivFul !== "jovahagyasra_var" || !lista.length;
+  const doboz = $("lista");
+  doboz.replaceChildren(...lista.map(kartya));
+  if (!lista.length) doboz.append(elem("p", "ures", aktivFul === "jovahagyasra_var" ? "Nincs jóváhagyásra váró tétel. A következő gyűjtés után nézz vissza." : "Ebben a csoportban nincs tétel."));
+  const n = valtozasok.size;
+  $("valtozasdb").textContent = n ? `${n} mentetlen változás` : "Nincs mentetlen változás";
+  $("mentesgomb").disabled = !n;
+}
+
+// ---- mentés: mindig a legfrissebb fájlra alkalmazzuk a döntéseket
+async function ment(probalkozas = 1) {
+  const gombE = $("mentesgomb");
+  gombE.disabled = true; gombE.textContent = "Mentés…";
+  try {
+    const { sha, adat: friss } = await letolt();
+    let db = 0;
+    for (const t of friss.tetelek) {
+      const v = valtozasok.get(t.id);
+      if (!v) continue;
+      if (v.mezok) Object.assign(t, v.mezok);
+      if (v.statusz) t.statusz = v.statusz;
+      db++;
+    }
+    const igen = [...valtozasok.values()].filter((v) => v.statusz === "jovahagyva").length;
+    const nem = [...valtozasok.values()].filter((v) => v.statusz === "elutasitva").length;
+    await gh("PUT", {
+      message: `Jóváhagyás: ${igen} jóváhagyva, ${nem} elutasítva, ${db} tétel módosult`,
+      content: b64be(JSON.stringify(friss, null, 2) + "\n"),
+      sha, branch: "main",
+    });
+    adat = friss;
+    valtozasok.clear();
+    rajzol();
+    alert("Elmentve. A nyilvános oldalon néhány percen belül megjelenik.");
+  } catch (e) {
+    if ((e.status === 409 || e.status === 422) && probalkozas < 3) return ment(probalkozas + 1);
+    alert(e.status === 403 || e.status === 404
+      ? "A tokennek nincs írási joga. A token beállításainál a Contents jogosultság legyen Read and write."
+      : "A mentés nem sikerült: " + e.message + ". A változásaid megmaradtak, próbáld újra.");
+  } finally {
+    gombE.textContent = "Mentés a GitHubra";
+    gombE.disabled = !valtozasok.size;
+  }
+}
+$("mentesgomb").onclick = () => ment();
+window.addEventListener("beforeunload", (e) => { if (valtozasok.size) { e.preventDefault(); e.returnValue = ""; } });
+
+// ---- indulás
+let mentett = "";
+try { mentett = localStorage.getItem("gh-token") || ""; } catch (_) {}
+if (mentett) belep(mentett, true); else $("belepes").hidden = false;
+</script>
+</body>
+</html>

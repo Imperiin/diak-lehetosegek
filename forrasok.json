@@ -65,32 +65,32 @@
     "url": "https://esemenyek.csokonai15.hu/",
     "tipus": "html",
     "terulet": "XV. kerület",
-    "megjegyzes": "A XV. kerületi közösségi házak (Csokonai, Kozák tér, Pestújhely, Újpalota, Kikötő Ifjúsági Központ) programjai.",
-    "aktiv": true
+    "megjegyzes": "Kikapcsolva: az oldal nem engedi az automatikus letöltést (403).",
+    "aktiv": false
   },
   {
     "nev": "Csokonai15 – Állandó programok",
     "url": "https://esemenyek.csokonai15.hu/programok/",
     "tipus": "html",
     "terulet": "XV. kerület",
-    "megjegyzes": "Rendszeres szakkörök, klubok, mozgásos foglalkozások. A felnőtteknek, időseknek, babáknak szólókat hagyd ki.",
-    "aktiv": true
+    "megjegyzes": "Kikapcsolva: az oldal nem engedi az automatikus letöltést (403).",
+    "aktiv": false
   },
   {
     "nev": "Csokonai15 – Táborok",
     "url": "https://taborok.csokonai15.hu/",
     "tipus": "html",
     "terulet": "XV. kerület",
-    "megjegyzes": "Nyári és szünidei táborok; a betelt táborokat hagyd ki.",
-    "aktiv": true
+    "megjegyzes": "Kikapcsolva: az oldal nem engedi az automatikus letöltést (403).",
+    "aktiv": false
   },
   {
     "nev": "TiZEN5 – kerületi hírek",
     "url": "http://hirek.csokonai15.hu/",
     "tipus": "html",
     "terulet": "XV. kerület",
-    "megjegyzes": "Kerületi újság: csak a konkrét, gyerekeknek vagy diákoknak szóló jelentkezési lehetőségeket és programokat vedd fel.",
-    "aktiv": true
+    "megjegyzes": "Kikapcsolva: az oldal nem engedi az automatikus letöltést (403).",
+    "aktiv": false
   },
   {
     "nev": "Tempus Közalapítvány – Pályázatok",
