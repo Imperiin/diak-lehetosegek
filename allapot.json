@@ -1,7 +1,7 @@
 {
   "https://pafi.hu/palyazatok/gyermek-ifjusag": {
-    "hash": "b8d4f4840caafda880455a21fce08d236912f722179f14dd8d7e654e43549272",
-    "utolso_feldolgozas": "2026-09-22T20:58:37+00:00"
+    "hash": "7815a720dd6069e634f30c9b1c31bdc1dacd76668e2e53db797b9e981af9d355",
+    "utolso_feldolgozas": "2026-10-20T19:48:42+00:00"
   },
   "https://palyazatok.org/tag/rajzpalyazat-gyerekeknek/": {
     "hash": "e186c77d0bc38c396bd18ff6c8a11de0ebdbbabcba8e2fc747958a0d0b89e472",
@@ -24,15 +24,15 @@
     "utolso_feldolgozas": "2026-09-22T20:28:46+00:00"
   },
   "https://www.gyerekprogramajanlo.hu/muzeum/": {
-    "hash": "f5263c8055f12e6828f5dcbf5c78d4f8b41645a66fab28cb0ca6f429084c6a4b",
-    "utolso_feldolgozas": "2026-09-22T20:29:04+00:00"
+    "hash": "af753402205032b2b1698336c7f5bf7a8a9dc489baf20ebad1fed81d4e7add02",
+    "utolso_feldolgozas": "2026-10-20T19:49:25+00:00"
   },
   "https://www.bpxv.hu/aktualitasok/palyazatok": {
-    "hash": "6655075bc8e21a7361093fb5d8a0ac2301f27b75a4e321b87fe3cac2d474e5c8",
-    "utolso_feldolgozas": "2026-09-22T20:29:14+00:00"
+    "hash": "134ed1dabbd04e2cf9d9958c25bbf31e59afa53d09246e5010ac9dd727a9e189",
+    "utolso_feldolgozas": "2026-10-20T19:49:36+00:00"
   },
   "https://www.bpxv.hu/aktualitasok/esemenyek": {
-    "hash": "56d28b4be9560dc3082bf695c0d0f1d50f4f85d7321037f04a01ac23632b27c1",
-    "utolso_feldolgozas": "2026-09-22T20:29:21+00:00"
+    "hash": "07782d8b4bb73bbf40ddccc140b0224d1ae4b6c53e7988124e7bb63eec30153e",
+    "utolso_feldolgozas": "2026-10-20T19:49:48+00:00"
   }
 }
