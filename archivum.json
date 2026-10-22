@@ -188,5 +188,25 @@
     "elso_latva": "2026-10-20",
     "utoljara_latva": "2026-10-20",
     "statusz": "jovahagyva"
+  },
+  {
+    "cim": "\"Mi van a tarisznyádban?\" - Meskete alkotói pályázat gyerekeknek a Népmese napja alkalmából",
+    "kategoria": "kreativ_palyazat",
+    "osszefoglalo": "Gyerekeknek szóló kreatív pályázat, ahol egy tarisznyát és három tárgyat kell megalkotniuk a Népmese napja alkalmából.",
+    "evfolyam_min": 1,
+    "evfolyam_max": 8,
+    "hatarido": "2026-10-20",
+    "esemeny_datum": null,
+    "helyszin": null,
+    "koltseg": null,
+    "szervezo": "Meskete.hu közösségi meseportál",
+    "idopont": null,
+    "link": "https://pafi.hu/p/mi-van-a-tarisznyadban-meskete-alkotoi-palyazat-gyerekeknek-a-nepmese-napja-alkalmabol",
+    "id": "784c9a037d91",
+    "forras": "pafi.hu – Gyermek, ifjúság",
+    "terulet": "országos",
+    "elso_latva": "2026-10-20",
+    "utoljara_latva": "2026-10-20",
+    "statusz": "jovahagyva"
   }
 ]

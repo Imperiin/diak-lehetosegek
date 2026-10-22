@@ -1,26 +1,6 @@
 {
-  "frissitve": "2026-10-20T19:49:51+00:00",
+  "frissitve": "2026-10-22T06:21:06+00:00",
   "tetelek": [
-    {
-      "cim": "\"Mi van a tarisznyádban?\" - Meskete alkotói pályázat gyerekeknek a Népmese napja alkalmából",
-      "kategoria": "kreativ_palyazat",
-      "osszefoglalo": "Gyerekeknek szóló kreatív pályázat, ahol egy tarisznyát és három tárgyat kell megalkotniuk a Népmese napja alkalmából.",
-      "evfolyam_min": 1,
-      "evfolyam_max": 8,
-      "hatarido": "2026-10-20",
-      "esemeny_datum": null,
-      "helyszin": null,
-      "koltseg": null,
-      "szervezo": "Meskete.hu közösségi meseportál",
-      "idopont": null,
-      "link": "https://pafi.hu/p/mi-van-a-tarisznyadban-meskete-alkotoi-palyazat-gyerekeknek-a-nepmese-napja-alkalmabol",
-      "id": "784c9a037d91",
-      "forras": "pafi.hu – Gyermek, ifjúság",
-      "terulet": "országos",
-      "elso_latva": "2026-10-20",
-      "utoljara_latva": "2026-10-20",
-      "statusz": "jovahagyva"
-    },
     {
       "cim": "Emlékfutás az 1956-os forradalom 70. évfordulóján",
       "kategoria": "esemeny",
@@ -38,7 +18,7 @@
       "forras": "XV. kerület – Önkormányzati események",
       "terulet": "XV. kerület",
       "elso_latva": "2026-10-20",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -76,7 +56,7 @@
       "forras": "XV. kerület – Önkormányzati események",
       "terulet": "XV. kerület",
       "elso_latva": "2026-10-20",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -188,7 +168,7 @@
       "forras": "XV. kerület – Önkormányzati pályázatok",
       "terulet": "XV. kerület",
       "elso_latva": "2026-10-20",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -248,7 +228,7 @@
       "forras": "XV. kerület – Önkormányzati események",
       "terulet": "XV. kerület",
       "elso_latva": "2026-10-20",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -309,6 +289,26 @@
       "terulet": "országos",
       "elso_latva": "2026-10-20",
       "utoljara_latva": "2026-10-20",
+      "statusz": "jovahagyva"
+    },
+    {
+      "cim": "Közelebb egymáshoz – XV. Kerületi Ifjúsági Konferencia",
+      "kategoria": "esemeny",
+      "osszefoglalo": "A XV. kerület ifjúsági konferenciája, ahol fiatalok megbeszéléseket és egyeztetéseket folytathatnak a kerülettel kapcsolatos kérdésekről.",
+      "evfolyam_min": 9,
+      "evfolyam_max": 13,
+      "hatarido": null,
+      "esemeny_datum": "2026-11-17",
+      "helyszin": "Budapest XV. kerület",
+      "koltseg": null,
+      "szervezo": null,
+      "idopont": null,
+      "link": "https://www.bpxv.hu/aktualitasok/kozelebb-egymashoz-xv-keruleti-ifjusagi-konferencia",
+      "id": "774cf73f0e6a",
+      "forras": "XV. kerület – Önkormányzati események",
+      "terulet": "XV. kerület",
+      "elso_latva": "2026-10-22",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -458,7 +458,7 @@
       "id": "7d6dffb92a33",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -476,7 +476,7 @@
       "id": "5de654a0b5b1",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -496,7 +496,7 @@
       "forras": "Szélforgó – Múzeumi programok",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -514,7 +514,7 @@
       "id": "36b32f4b6580",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -534,7 +534,7 @@
       "forras": "Szélforgó – Múzeumi programok",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -554,7 +554,7 @@
       "forras": "Szélforgó – Múzeumi programok",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -574,7 +574,7 @@
       "forras": "Szélforgó – Múzeumi programok",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -592,7 +592,7 @@
       "id": "152532a90c87",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -610,7 +610,7 @@
       "id": "fcc3e97b51bb",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -630,7 +630,7 @@
       "forras": "Szélforgó – Múzeumi programok",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -650,7 +650,7 @@
       "forras": "Szélforgó – Múzeumi programok",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -670,7 +670,7 @@
       "forras": "Szélforgó – Múzeumi programok",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -690,7 +690,7 @@
       "forras": "Szélforgó – Múzeumi programok",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -708,7 +708,7 @@
       "id": "0beeae9b5e9d",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -728,7 +728,7 @@
       "forras": "Szélforgó – Múzeumi programok",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -746,7 +746,7 @@
       "id": "2721ed72bda6",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -764,7 +764,7 @@
       "id": "b430c5d32714",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -784,7 +784,7 @@
       "forras": "Szélforgó – Múzeumi programok",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -804,7 +804,7 @@
       "forras": "FPSZ Pályaválasztás",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -824,7 +824,7 @@
       "forras": "Eurodesk – Hírek",
       "terulet": "nemzetközi",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -842,7 +842,7 @@
       "id": "d0e3c0392102",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -860,7 +860,7 @@
       "id": "334cfe06487b",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -878,7 +878,7 @@
       "id": "4b85fbdea3a7",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -916,7 +916,7 @@
       "id": "220321538964",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -936,7 +936,7 @@
       "forras": "Eurodesk – Hírek",
       "terulet": "nemzetközi",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -954,7 +954,7 @@
       "id": "495e8d7b2b5a",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -972,7 +972,7 @@
       "id": "060f5788dcfb",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -992,7 +992,7 @@
       "forras": "FPSZ Pályaválasztás",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -1010,7 +1010,7 @@
       "id": "068adad6922d",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -1028,7 +1028,7 @@
       "id": "b14c3b185e4a",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -1046,7 +1046,7 @@
       "id": "074f2a018f45",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -1066,7 +1066,7 @@
       "forras": "FPSZ Pályaválasztás",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -1084,7 +1084,7 @@
       "id": "69a759e6c42d",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -1102,7 +1102,7 @@
       "id": "ecf3e9ff63bc",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -1120,7 +1120,7 @@
       "id": "5ba652799e4f",
       "forras": "palyazatok.org – Rajzpályázat gyerekeknek",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     },
     {
@@ -1140,7 +1140,7 @@
       "forras": "Eurodesk – Hírek",
       "terulet": "nemzetközi",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-10-20",
+      "utoljara_latva": "2026-10-22",
       "statusz": "jovahagyva"
     }
   ]
