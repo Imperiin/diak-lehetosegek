@@ -338,5 +338,25 @@
     "elso_latva": "2026-09-22",
     "utoljara_latva": "2026-09-22",
     "statusz": "jovahagyva"
+  },
+  {
+    "cim": "Richter TETT: Te és a természettudományok – mesés történetek 2026",
+    "kategoria": "kreativ_palyazat",
+    "osszefoglalo": "Természettudományos mese- és történetíró pályázat diákoknak, amely a természettudomány szeretetét és hasznát mutatja be mesés formában.",
+    "evfolyam_min": 1,
+    "evfolyam_max": 13,
+    "hatarido": "2026-10-31",
+    "esemeny_datum": null,
+    "helyszin": null,
+    "koltseg": null,
+    "szervezo": "Richter Gedeon Nyrt.",
+    "idopont": null,
+    "link": "https://pafi.hu/p/richter-tett-te-es-a-termeszettudomanyok-meses-tortenetek-2026",
+    "id": "b61a17ce8592",
+    "forras": "pafi.hu – Gyermek, ifjúság",
+    "terulet": "országos",
+    "elso_latva": "2026-10-20",
+    "utoljara_latva": "2026-10-20",
+    "statusz": "jovahagyva"
   }
 ]
