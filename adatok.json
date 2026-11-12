@@ -1,26 +1,6 @@
 {
-  "frissitve": "2026-11-09T14:32:53+00:00",
+  "frissitve": "2026-11-12T14:07:27+00:00",
   "tetelek": [
-    {
-      "cim": "MI-kor. Felfedezések és kalandok a digitális világban",
-      "kategoria": "kreativ_palyazat",
-      "osszefoglalo": "Pályázat 7–8. osztályosoknak a mesterséges intelligencia jövőjéről való gondolkodásra és ötletalkotásra.",
-      "evfolyam_min": 7,
-      "evfolyam_max": 8,
-      "hatarido": "2026-11-09",
-      "esemeny_datum": null,
-      "helyszin": null,
-      "koltseg": null,
-      "szervezo": "Barankovics István Alapítvány",
-      "idopont": null,
-      "link": "https://pafi.hu/p/mi-kor-felfedezesek-es-kalandok-a-digitalis-vilagban",
-      "id": "4e588e1ef520",
-      "forras": "pafi.hu – Gyermek, ifjúság",
-      "terulet": "országos",
-      "elso_latva": "2026-10-20",
-      "utoljara_latva": "2026-10-20",
-      "statusz": "jovahagyva"
-    },
     {
       "cim": "II. Veszprém Megye Kincsestára",
       "kategoria": "verseny",
@@ -554,7 +534,7 @@
       "forras": "FPSZ Pályaválasztás",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-11-09",
+      "utoljara_latva": "2026-11-12",
       "statusz": "jovahagyva"
     },
     {
@@ -742,7 +722,7 @@
       "forras": "FPSZ Pályaválasztás",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-11-09",
+      "utoljara_latva": "2026-11-12",
       "statusz": "jovahagyva"
     },
     {
@@ -816,7 +796,7 @@
       "forras": "FPSZ Pályaválasztás",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-11-09",
+      "utoljara_latva": "2026-11-12",
       "statusz": "jovahagyva"
     },
     {
