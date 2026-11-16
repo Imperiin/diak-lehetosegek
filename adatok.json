@@ -1,26 +1,6 @@
 {
-  "frissitve": "2026-11-12T14:07:27+00:00",
+  "frissitve": "2026-11-16T14:08:53+00:00",
   "tetelek": [
-    {
-      "cim": "II. Veszprém Megye Kincsestára",
-      "kategoria": "verseny",
-      "osszefoglalo": "Megyei történelem-földrajz-közművelődési-kulturális tanulmányi verseny diákoknak.",
-      "evfolyam_min": 1,
-      "evfolyam_max": 13,
-      "hatarido": "2026-11-15",
-      "esemeny_datum": null,
-      "helyszin": null,
-      "koltseg": null,
-      "szervezo": "Gyermekjóléti Alapítvány",
-      "idopont": null,
-      "link": "https://pafi.hu/p/ii-veszprem-megye-kincsestara",
-      "id": "362f4d225d88",
-      "forras": "pafi.hu – Gyermek, ifjúság",
-      "terulet": "országos",
-      "elso_latva": "2026-10-20",
-      "utoljara_latva": "2026-10-20",
-      "statusz": "jovahagyva"
-    },
     {
       "cim": "Közelebb egymáshoz – XV. Kerületi Ifjúsági Konferencia",
       "kategoria": "esemeny",
@@ -534,7 +514,7 @@
       "forras": "FPSZ Pályaválasztás",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-11-12",
+      "utoljara_latva": "2026-11-16",
       "statusz": "jovahagyva"
     },
     {
@@ -722,7 +702,7 @@
       "forras": "FPSZ Pályaválasztás",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-11-12",
+      "utoljara_latva": "2026-11-16",
       "statusz": "jovahagyva"
     },
     {
@@ -796,7 +776,7 @@
       "forras": "FPSZ Pályaválasztás",
       "terulet": "Budapest",
       "elso_latva": "2026-09-22",
-      "utoljara_latva": "2026-11-12",
+      "utoljara_latva": "2026-11-16",
       "statusz": "jovahagyva"
     },
     {
