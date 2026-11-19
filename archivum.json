@@ -498,5 +498,25 @@
     "elso_latva": "2026-10-20",
     "utoljara_latva": "2026-10-20",
     "statusz": "jovahagyva"
+  },
+  {
+    "cim": "Közelebb egymáshoz – XV. Kerületi Ifjúsági Konferencia",
+    "kategoria": "esemeny",
+    "osszefoglalo": "A XV. kerület ifjúsági konferenciája, ahol fiatalok megbeszéléseket és egyeztetéseket folytathatnak a kerülettel kapcsolatos kérdésekről.",
+    "evfolyam_min": 9,
+    "evfolyam_max": 13,
+    "hatarido": null,
+    "esemeny_datum": "2026-11-17",
+    "helyszin": "Budapest XV. kerület",
+    "koltseg": null,
+    "szervezo": null,
+    "idopont": null,
+    "link": "https://www.bpxv.hu/aktualitasok/kozelebb-egymashoz-xv-keruleti-ifjusagi-konferencia",
+    "id": "774cf73f0e6a",
+    "forras": "XV. kerület – Önkormányzati események",
+    "terulet": "XV. kerület",
+    "elso_latva": "2026-10-22",
+    "utoljara_latva": "2026-10-26",
+    "statusz": "jovahagyva"
   }
 ]
